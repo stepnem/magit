@@ -251,19 +251,19 @@ put it in magit-key-mode-key-maps for fast lookup."
          (arguments (cdr (assoc 'arguments options)))
          (map (make-sparse-keymap)))
     ;; ret dwim
-    (define-key map (kbd "RET") 'magit-key-mode-exec-at-point)
+    (define-key map "\C-m" 'magit-key-mode-exec-at-point)
 
     ;; all maps should `quit' with `C-g' or `q'
-    (define-key map (kbd "C-g") `(lambda ()
-                                   (interactive)
-                                   (magit-key-mode-command nil)))
-    (define-key map (kbd "q")   `(lambda ()
-                                   (interactive)
-                                   (magit-key-mode-command nil)))
+    (define-key map "\C-g" `(lambda ()
+                              (interactive)
+                              (magit-key-mode-command nil)))
+    (define-key map "q" `(lambda ()
+                           (interactive)
+                           (magit-key-mode-command nil)))
     ;; run help
-    (define-key map (kbd "?") `(lambda ()
-                                 (interactive)
-                                 (magit-key-mode-help ',for-group)))
+    (define-key map "?" `(lambda ()
+                           (interactive)
+                           (magit-key-mode-help ',for-group)))
 
     (flet ((defkey (k action)
              (when (and (lookup-key map (car k))

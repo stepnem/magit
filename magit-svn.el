@@ -199,7 +199,7 @@ If USE-CACHE is non nil, use the cached information."
   ;; generate and bind the menu popup function
   (magit-key-mode-generate 'svn))
 
-(define-key magit-mode-map (kbd "N") 'magit-key-mode-popup-svn)
+(define-key magit-mode-map "N" 'magit-key-mode-popup-svn)
 
 (provide 'magit-svn)
 ;;; magit-svn.el ends here
