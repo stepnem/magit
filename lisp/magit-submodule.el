@@ -251,8 +251,6 @@ For each section insert the path and the output of `git describe --tags'."
                                   (propertize it 'face 'magit-branch-local)
                                 (propertize "(detached)" 'face 'warning))))
               (--when-let (magit-git-string "describe" "--tags")
-                (when (string-match-p "\\`[0-9]" it)
-                  (insert ?\s))
                 (insert (propertize it 'face 'magit-tag))))
             (insert ?\n))))))
   (insert ?\n))
