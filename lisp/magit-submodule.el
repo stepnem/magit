@@ -224,7 +224,8 @@ whether they are wrapped in an additional section."
 ;;;###autoload
 (defun magit-insert-modules-overview ()
   "Insert sections for all modules.
-For each section insert the path and the output of `git describe --tags'."
+For each section insert the path and the output of
+`git describe --tags --always'."
   (-when-let (modules (magit-get-submodules))
     (magit-insert-section section (submodules nil t)
       (magit-insert-heading
@@ -250,7 +251,7 @@ For each section insert the path and the output of `git describe --tags'."
                               (--if-let (magit-get-current-branch)
                                   (propertize it 'face 'magit-branch-local)
                                 (propertize "(detached)" 'face 'warning))))
-              (--when-let (magit-git-string "describe" "--tags")
+              (--when-let (magit-git-string "describe" "--tags" "--always")
                 (insert (propertize it 'face 'magit-tag))))
             (insert ?\n))))))
   (insert ?\n))

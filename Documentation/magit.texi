@@ -2342,7 +2342,7 @@ become top-level sections.
 @defun magit-insert-modules-overview
 
 Insert sections for all submodules.  For each section insert the
-path, the branch, and the output of @code{git describe --tags}.
+path, the branch, and the output of @code{git describe --tags --always}.
 
 Press @code{RET} on such a submodule section to show its own status buffer.
 Press @code{RET} on the "Modules" section to display a list of submodules
@@ -7047,7 +7047,7 @@ that supports the keys @code{:right-align} and @code{:pad-right}.
 @defun magit-insert-submodules
 
 Insert sections for all submodules.  For each section insert the
-path, the branch, and the output of @code{git describe --tags}.
+path, the branch, and the output of @code{git describe --tags --always}.
 
 Press @code{RET} on such a submodule section to show its own status buffer.
 Press @code{RET} on the "Modules" section to display a list of submodules
